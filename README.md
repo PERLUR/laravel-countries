@@ -16,13 +16,16 @@ Run `composer update` to pull down the latest version of Country List.
 Edit `app/config/app.php` and add the `provider` and `filter`
 
     'providers' => [
-        'PERLUR\Countries\CountriesServiceProvider',
+        /*
+         * Package Service Providers...
+         */
+        PERLUR\Countries\CountriesServiceProvider::class,
     ]
 
 Now add the alias.
 
     'aliases' => [
-        'Countries' => 'PERLUR\Countries\CountriesFacade',
+        'Country'      => PERLUR\Countries\CountriesFacade::class,
     ]
     
 
@@ -39,7 +42,7 @@ Next generate the migration file:
 It will generate the `<timestamp>_setup_countries_table.php` migration and the `CountriesSeeder.php` seeder. To make sure the data is seeded insert the following code in the `seeds/DatabaseSeeder.php`
 
     //Seed the countries
-    $this->call('CountriesSeeder');
+    $this->call(CountriesSeeder::class);
     $this->command->info('Seeded the countries!'); 
 
 You may now run it with the artisan migrate command:
