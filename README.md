@@ -9,9 +9,7 @@ Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, 
 
 ## Installation
 
-Add `perlur/laravel-countries` to `composer.json`.
-
-    "perlur/laravel-countries": "dev-master"
+Run `composer require perlur/laravel-countries` to add `perlur/laravel-countries` to `composer.json`.
     
 Run `composer update` to pull down the latest version of Country List.
 
